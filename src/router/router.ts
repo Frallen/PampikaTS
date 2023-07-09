@@ -1,9 +1,11 @@
-import Cast from "../pages/Cast.vue";
 import {createRouter, createWebHistory} from 'vue-router'
 
 const routes = [
     {
-        path: "/characters", name: "characters", component: Cast
+        path: "/characters", name: "characters", component: import('../pages/Cast.vue')
+    },
+    {
+        path: "/", name: "index", component: import('../pages/Index.vue')
     },
 ]
 
