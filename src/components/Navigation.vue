@@ -1,10 +1,9 @@
 <template>
-  <img src="/public/images/" alt="">
   <div class="nav">
-    <router-link :to="item.Link" :active-class="'active'" class="nav-item" v-for="item in Navigation">
-      <span><img :src="'/public/images/'+item.Icon" alt="icon"></span>
+    <div :to="item.Link" :active-class="'active'" class="nav-item" v-for="item in Navigation">
+      <span><img :src="'/images/'+item.Icon" alt="icon"></span>
       {{ item.Title }}
-    </router-link>
+    </div>
   </div>
 </template>
 <script setup lang="ts">
@@ -21,6 +20,7 @@ const {Navigation} = storeToRefs(useMain())
   justify-content: space-between;
 
   &-item {
+    cursor: pointer;
     text-decoration: none;
     color: black;
     text-align: center;

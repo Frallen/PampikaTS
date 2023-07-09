@@ -7,7 +7,11 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    Character: typeof import('./src/components/Character.vue')['default']
+    Characters: typeof import('./src/components/Characters.vue')['default']
     Error: typeof import('./src/components/Error.vue')['default']
+    ListCharacters: typeof import('./src/components/ListCharacters.vue')['default']
+    LIstCharacters: typeof import('./src/components/LIstCharacters.vue')['default']
     Navigation: typeof import('./src/components/Navigation.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']

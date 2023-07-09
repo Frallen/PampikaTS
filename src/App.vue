@@ -13,7 +13,8 @@
 </template>
 <script setup lang="ts">
 const {isError} = storeToRefs(useMain())
-
+const router = useRouter()
+router.push({name: "characters"})
 </script>
 <style lang="less">
 

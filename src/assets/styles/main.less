@@ -10,6 +10,7 @@ html {
 
 body {
   overflow-x: hidden;
+  background: #f4f5f5;
 }
 
 h1,
@@ -35,6 +36,7 @@ h6 {
 .container {
   max-width: 500px;
   margin: 0 auto;
+  padding: 20px 0;
 }
 
 .page-title {
@@ -46,13 +48,41 @@ h6 {
   line-height: 24px;
   letter-spacing: -0.2px;
 }
-.input{
+
+.input {
   border: none;
   background: transparent;
   outline: none;
   color: black;
   padding: 5px 0;
 }
-.input::placeholder{
 
+.input::placeholder {
+  color: @gray;
+}
+
+.button{
+  text-decoration: none;
+  padding: 15px;
+  outline: none;
+  border: none;
+  .br(10px);
+  width: 100%;
+  cursor: pointer;
+}
+.button-default{
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.327px;
+  color: #3C4061;
+  background: #fff;
+}
+.button-primary{
+  background: @violet;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 24px;
 }

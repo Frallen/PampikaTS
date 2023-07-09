@@ -1,3 +1,6 @@
+import {characterType} from "../types/global.types";
+import axios from "axios";
+
 interface stateType {
     ModalState: boolean
     isError: boolean
@@ -6,6 +9,8 @@ interface stateType {
         Icon: string,
         Link: string
     }>
+    Characters: characterType[],
+    searchValue: string,
 }
 
 export const useMain = defineStore('main', {
@@ -33,14 +38,36 @@ export const useMain = defineStore('main', {
                 Icon: "User.svg",
                 Link: "/user",
             },
-        ]
+        ],
+        Characters: [],
+        searchValue: ""
     }),
-    getters: {},
-    actions: {
-        async ModalChanger(state: boolean) {
-            this.ModalState = state
-            overFlow(state)
+    getters: {
+        filteredCharacters: (state) => {
+            return () =>
+                state.searchValue
+                    ? state.Characters.filter((p) =>
+                        p.name.toLowerCase().includes(state.searchValue.toLowerCase())
+                    )
+                    : state.Characters;
         },
+    },
+    actions: {
+
+        async fetchCharacters(page: string) {
+            try {
+                const snap = await axios.get('https://rickandmortyapi.com/api/character/', {
+                    params: {
+                        page: page
+                    }
+                })
+
+                this.Characters.push(...snap.data.results)
+
+            } catch (e) {
+                this.isError = true
+            }
+        }
     }
 
 })
