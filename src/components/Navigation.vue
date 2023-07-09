@@ -1,6 +1,7 @@
 <template>
   <div class="nav">
-    <div :to="item.Link" :active-class="'active'" class="nav-item" v-for="item in Navigation">
+    <div
+        class="nav-item" v-for="item in Navigation">
       <span><img :src="'/images/'+item.Icon" alt="icon"></span>
       {{ item.Title }}
     </div>
@@ -39,7 +40,8 @@ const {Navigation} = storeToRefs(useMain())
     color: @orange;
   }
 }
-.active{
+
+.active {
   color: @orange;
 }
 </style>
