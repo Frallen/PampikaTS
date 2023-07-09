@@ -37,6 +37,9 @@ h6 {
   max-width: 500px;
   margin: 0 auto;
   padding: 20px 0;
+  @media @sm {
+    margin: 0 10px;
+  }
 }
 
 .page-title {
@@ -61,7 +64,7 @@ h6 {
   color: @gray;
 }
 
-.button{
+.button {
   text-align: center;
   display: block;
   text-decoration: none;
@@ -72,7 +75,8 @@ h6 {
   width: 100%;
   cursor: pointer;
 }
-.button-default{
+
+.button-default {
   display: flex;
   justify-content: space-evenly;
   font-size: 17px;
@@ -81,7 +85,8 @@ h6 {
   color: #3C4061;
   background: #fff;
 }
-.button-primary{
+
+.button-primary {
   background: @violet;
   color: #fff;
   font-size: 20px;

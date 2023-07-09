@@ -16,8 +16,8 @@
 <script setup lang="ts">
 const {params, path} = useRoute()
 const router = useRouter()
-const {fetchCharacters,Characters} = useMain()
-const {filteredCharacters,searchValue} = storeToRefs(useMain())
+const {fetchCharacters, Characters} = useMain()
+const {filteredCharacters, searchValue} = storeToRefs(useMain())
 const currentPage = ref<string>(params.page as string ?? "1")
 
 
@@ -46,6 +46,7 @@ watch(currentPage, () => {
   &-box {
     padding: 11px 25px;
     background: #fff;
+    box-shadow: 0 48px 0 0 #ffff;
   }
 }
 
