@@ -5,7 +5,7 @@
     <ListCharacters :list="filteredCharacters()"></ListCharacters>
     <button class="button button-default" @click="currentPage=(parseInt(currentPage)+1).toString()">
       Показать еще
-      <span><img src="/public/images/arrowDown.svg" alt="arrow"></span>
+      <span><img src="/images/arrowDown.svg" alt="arrow"></span>
     </button>
     <div class="cast-box" v-show="searchValue" @click="searchValue='';Characters=[];currentPage='1'">
       <button class="button button-primary">Сбросить поиск</button>
